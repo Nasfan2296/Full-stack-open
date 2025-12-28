@@ -72,3 +72,27 @@ sequenceDiagram
     deactivate Server
 
     Note right of Browser: Browser executes callback to render notes
+## 0.6 New Note in Single Page App
+
+This diagram shows the sequence of actions when the user creates a new note in the SPA version of the notes app.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Enter new note and submit
+    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/notes (new note data)
+    activate Server
+    Server-->>Browser: Confirmation of saved note
+    deactivate Server
+
+    Note right of Browser: Browser fetches updated notes
+
+    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server-->>Browser: Updated JSON with new note
+    deactivate Server
+
+    Note right of Browser: Browser renders updated notes list without reloading the page
