@@ -71,7 +71,7 @@ sequenceDiagram
     Server-->>Browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
     deactivate Server
 
-    Note right of Browser: Browser executes callback to render notes
+    Note right of Browser: Browser executes callback to render notes```
 ## 0.6 New Note in Single Page App
 
 This diagram shows the sequence of actions when the user creates a new note in the SPA version of the notes app.
@@ -95,4 +95,4 @@ sequenceDiagram
     Server-->>Browser: Updated JSON with new note
     deactivate Server
 
-    Note right of Browser: Browser renders updated notes list without reloading the page
+    Note right of Browser: Browser renders updated notes list without reloading the page```
